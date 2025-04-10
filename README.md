@@ -110,5 +110,5 @@ Free to use, share, and modify. No attribution required (but appreciated!).
 
 ## 🙌 Author
 
-Made with ❤️ by [Your Name]  
+Made with ❤️ by Bezaleel Solutions Team  
 Feel free to fork and customize it for your own creative ideas!
