@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpinBite Demo</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        #spin-wheel-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #spin-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #result-message {
+            font-size: 22px;
+            margin-top: 25px;
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="spin-wheel-container">
+    <canvas id="spinwheel" width="500" height="500"></canvas>
+
+    <div id="result-message"></div>
+</div>
+<div align="center">
+    <button id="spin-btn">Spin the Wheel</button>
+</div>
+
+<!-- SweetAlert CDN -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="SpinBite.js"></script>
+<script>
+    // Initialize the wheel with your values
+    const wheel = new SpanWheel('spinwheel', {
+        values: ['5pound', '10pound', '15pound', '18pound'], // dynamic values
+        onSpinEnd: function (selectedValue) {
+            swal("🎉 Congratulations!", "You won Voucher of " + selectedValue + "!", "success");
+        }
+    });
+
+    document.getElementById('spin-btn').addEventListener('click', () => {
+        wheel.spin();
+    });
+</script>
+
+</body>
+</html>
